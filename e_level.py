@@ -84,10 +84,8 @@ if uploaded_file is not None:
         
     tf_idf = load_tf_idf()
     X_values_vect = tf_idf.transform(sub_lemm_text)
-      
     
-    #создать фрейм данных
-    model = CatBoostClassifier()      # parameters not required.
+    model = CatBoostClassifier()     
     model.load_model('D:\DS+\9.GIT\dev\English_level\catboost_model.bin')
     
     y_pred = model.predict(X_values_vect)
